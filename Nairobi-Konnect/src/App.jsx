@@ -5,7 +5,7 @@ import Landing from './components/Landing'
 import Login from './components/Login'
 import Navbar from './components/Navbar'
 import Seller from './components/Seller'
-import SignUp from './componentsSignUp'
+import SignUp from './components/SignUp'
 import Stalls from './components/Stalls'
 import User from './components/User'
 
