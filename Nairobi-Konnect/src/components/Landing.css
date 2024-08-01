@@ -7,18 +7,12 @@
 }
 
 /* Hero Section */
-/* Hero Section */
 .hero {
-    background: url('../assets/busb.jpg') no-repeat center center;
-    background-size: contain; /* Keeps the aspect ratio */
+    background: linear-gradient(135deg, #4a90e2, #9013fe);
     color: white;
     text-align: center;
     padding: 5rem 2rem;
-    height: 500px; /* Adjust height to match the aspect ratio of the image */
-    width: 100%; /* Or specify a fixed width if needed */
 }
-
-
 
 .hero-content {
     max-width: 800px;
