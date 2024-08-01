@@ -1,27 +1,28 @@
-/* src/pages/LandingPage.css */
+/* src/pages/Landing.css */
+
 .landing-page {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
 }
 
-/* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #4a90e2, #9013fe);
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/background1.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
-    padding: 5rem 2rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+    z-index: 2;
 }
 
 .hero-title {
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
@@ -31,110 +32,126 @@
 }
 
 .cta-button {
-    background-color: #fff;
-    color: #4a90e2;
+    background-color: #1d4ed8;
+    color: white;
+    padding: 0.75rem 1.5rem;
     border: none;
-    padding: 0.75rem 2rem;
-    font-size: 1.125rem;
-    font-weight: 600;
     border-radius: 0.5rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #e5e5e5;
+    background-color: #2563eb;
 }
 
-/* Services Section */
 .services {
-    background-color: #f8f9fa;
+    background-color: #f3f4f6;
     padding: 4rem 2rem;
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
     text-align: center;
 }
 
 .services-title {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 2rem;
     margin-bottom: 2rem;
 }
 
 .services-list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
-    flex-wrap: wrap;
 }
 
 .service-card {
     background-color: white;
     border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 2rem;
-    max-width: 300px;
-    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
 }
 
 .service-title {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.25rem;
     margin-bottom: 1rem;
 }
 
 .service-description {
-    color: #6c757d;
+    font-size: 1rem;
+    color: #4b5563;
 }
 
-/* Contact Section */
 .contact {
+    background-color: #ffffff;
     padding: 4rem 2rem;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
     text-align: center;
 }
 
 .contact-title {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 2rem;
     margin-bottom: 2rem;
 }
 
 .contact-form {
-    max-width: 500px;
-    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
 }
 
 .contact-label {
-    display: block;
-    font-weight: 600;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
 }
 
 .contact-input,
 .contact-textarea {
     width: 100%;
-    padding: 1rem;
-    border: 1px solid #ced4da;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
     border-radius: 0.5rem;
-    margin-bottom: 1rem;
-    box-sizing: border-box;
 }
 
 .contact-textarea {
     height: 150px;
-    resize: vertical;
+    resize: none;
 }
 
 .contact-submit {
-    background-color: #4a90e2;
+    background-color: #1d4ed8;
     color: white;
+    padding: 0.75rem 1.5rem;
     border: none;
-    padding: 0.75rem 2rem;
-    font-size: 1.125rem;
-    font-weight: 600;
     border-radius: 0.5rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .contact-submit:hover {
-    background-color: #357abd;
+    background-color: #2563eb;
+}
+
+/* Animation for changing background images */
+@keyframes changeBackground {
+    0% { background-image: url('../assets/busb.jpg'); }
+    25% { background-image: url('../assets/background.jpg'); }
+    50% { background-image: url('../assets/backgroud.jpg'); }
+    75% { background-image: url('../assets/paying.jpg'); }
+    100% { background-image: url('../assets/back1.jpeg'); }
+}
+
+/* Apply animation to the hero section */
+.hero {
+    animation: changeBackground 20s infinite;
 }
