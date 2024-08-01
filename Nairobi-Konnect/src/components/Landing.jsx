@@ -1,7 +1,7 @@
 // src/pages/LandingPage.jsx
 import React from 'react';
 import Navbar from '../components/Navbar';
-import './Landing.css'; // Ensure correct path
+import './Landing.css'; 
 
 const LandingPage = () => {
     return (
@@ -9,9 +9,9 @@ const LandingPage = () => {
             <Navbar />
             <header id="home" className="hero">
                 <div className="hero-content">
-                    <h1 className="hero-title">Welcome to Our Future-Ready Platform</h1>
+                    <h1 className="hero-title">Welcome to NairobiKonnect where you will be able to explore the greatness of nairobi</h1>
                     <p className="hero-description">
-                        Innovating solutions with cutting-edge technology to drive your success.
+                        NairobiKonnect is a platform that allows users to explore the greatness of Nairobi. Whereby a user can book a bus seat and buy from the various local stalls
                     </p>
                     <button
                         onClick={() => document.getElementById('services').scrollIntoView({ behavior: 'smooth' })}
@@ -27,21 +27,28 @@ const LandingPage = () => {
                     <h2 className="services-title">Our Services</h2>
                     <div className="services-list">
                         <div className="service-card">
-                            <h3 className="service-title">Service One</h3>
+                            <h3 className="service-title">Booking Buses</h3>
                             <p className="service-description">
-                                Advanced solutions tailored to your business needs.
+                                A user is able to book a bus for the route they would want
                             </p>
                         </div>
                         <div className="service-card">
-                            <h3 className="service-title">Service Two</h3>
+                            <h3 className="service-title">Driver </h3>
                             <p className="service-description">
-                                Innovative technology to streamline your operations.
+                                A driver can register there car and and work 
                             </p>
                         </div>
                         <div className="service-card">
-                            <h3 className="service-title">Service Three</h3>
+                            <h3 className="service-title">Buying</h3>
                             <p className="service-description">
-                                Comprehensive support and guidance for your success.
+                                A user can shop from local stores with an effective payment method
+                            </p>
+                        </div>
+
+                        <div className="service-card">
+                            <h3 className="service-title">BusinessPerson</h3>
+                            <p className="service-description">
+                                A business person can sell their products to the users
                             </p>
                         </div>
                     </div>
