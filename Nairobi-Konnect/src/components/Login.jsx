@@ -1,6 +1,6 @@
 // src/pages/LoginPage.jsx
 import React, { useState } from 'react';
-import './Login.css'; // Updated CSS file
+import './Login.css'; // Make sure the path is correct
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');
@@ -15,9 +15,7 @@ const LoginPage = () => {
 
     return (
         <div className="login-page">
-            <div className="left-bg"></div>
-            <div className="right-bg"></div>
-            <div className="login-container">
+            <div className="frame-container">
                 <div className="login-form-container">
                     <h2 className="login-title">Login</h2>
                     <form onSubmit={handleLogin} className="login-form">
@@ -46,7 +44,7 @@ const LoginPage = () => {
                 </div>
                 <div className="side-text">
                     <div>
-                        <h3>Welcome to the Future</h3>
+                        <h3>Welcome Back</h3>
                         <p>Discover a seamless login experience with our modern and secure platform. Connect effortlessly and access your account with ease.</p>
                     </div>
                 </div>
