@@ -1,140 +1,136 @@
-/* src/pages/LandingPage.css */
+/* Landing.css */
+
 .landing-page {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    color: #222121;
 }
 
-/* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #4a90e2, #9013fe);
-    color: white;
+    background-image: url('../assets/backgroud.jpg'); /* Add your background image URL here */
+    background-size: cover; /* Adjusts the size of the background image */
+    background-position: center; /* Centers the background image */
+    padding: 50px 0;
     text-align: center;
-    padding: 5rem 2rem;
 }
 
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 .hero-title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
 .hero-description {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
 .cta-button {
-    background-color: #fff;
-    color: #4a90e2;
+    background-color: #007bff; /* Button color */
+    color: #fff;
+    padding: 10px 20px;
     border: none;
-    padding: 0.75rem 2rem;
-    font-size: 1.125rem;
-    font-weight: 600;
-    border-radius: 0.5rem;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 1rem;
 }
 
-.cta-button:hover {
-    background-color: #e5e5e5;
-}
-
-/* Services Section */
 .services {
-    background-color: #f8f9fa;
-    padding: 4rem 2rem;
+    background-image: url('/path/to/your/services-background.jpg'); /* Add your background image URL here */
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
     text-align: center;
 }
 
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .services-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .services-list {
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .service-card {
-    background-color: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better text visibility */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    flex: 1;
     max-width: 300px;
-    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .service-title {
     font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
 }
 
 .service-description {
-    color: #6c757d;
+    font-size: 1rem;
 }
 
-/* Contact Section */
 .contact {
-    padding: 4rem 2rem;
+    background-image: url('../assets/backgroud.jpg'); /* Add your background image URL here */
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
     text-align: center;
 }
 
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .contact-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .contact-form {
-    max-width: 500px;
-    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    max-width: 100%;
 }
 
 .contact-label {
     display: block;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    margin: 10px 0 5px;
 }
 
 .contact-input,
 .contact-textarea {
     width: 100%;
-    padding: 1rem;
-    border: 1px solid #ced4da;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-    box-sizing: border-box;
-}
-
-.contact-textarea {
-    height: 150px;
-    resize: vertical;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
 }
 
 .contact-submit {
-    background-color: #4a90e2;
-    color: white;
+    background-color: #007bff; /* Button color */
+    color: #fff;
+    padding: 10px 20px;
     border: none;
-    padding: 0.75rem 2rem;
-    font-size: 1.125rem;
-    font-weight: 600;
-    border-radius: 0.5rem;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.contact-submit:hover {
-    background-color: #357abd;
+    font-size: 1rem;
 }
