@@ -1,56 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
-import './Landing.css'; 
+import './Landing.css';
 
 const LandingPage = () => {
-    const [isSubmitted, setIsSubmitted] = useState(false);
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-    });
+    const [currentImage, setCurrentImage] = useState(0);
 
-    const handleChange = (e) => {
-        const { id, value } = e.target;
-        setFormData(prevData => ({
-            ...prevData,
-            [id]: value
-        }));
-    };
+    // List of background images
+    const images = [
+        'url(https://i.ytimg.com/vi/ofzQqJNEYBk/maxresdefault.jpg)',
+        'url(https://img.freepik.com/premium-photo/nairobi-city-county-kenyas-capital-cityscapes-skyline-skyscrapers-highrise-buildings-architecture_257688-277.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1722297600&semt=ais_hybrid)',
+        'url(https://www.voyagekenya.fr/cdn/ke-public/nairobi_centre_ville.jpg)'
+    ];
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        // Normally handle form submission here, e.g., send data to a server
-        console.log('Form Data:', formData);
-
-        // Simulate a successful form submission
-        setIsSubmitted(true);
-
-        // Reset form data
-        setFormData({
-            name: '',
-            email: '',
-            message: ''
-        });
-
-        // Clear the notification after a few seconds
-        setTimeout(() => setIsSubmitted(false), 5000);
-    };
-
-    // Effect to add and remove the 'show' class for animation
     useEffect(() => {
-        if (isSubmitted) {
-            const messageElement = document.querySelector('.submission-message');
-            messageElement.classList.add('show');
-            const timer = setTimeout(() => messageElement.classList.remove('show'), 5000);
+        // Change the background image every 10 seconds
+        const interval = setInterval(() => {
+            setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+        }, 10000); // 10000 milliseconds = 10 seconds
 
-            return () => clearTimeout(timer);
-        }
-    }, [isSubmitted]);
+        return () => clearInterval(interval); // Clean up the interval on component unmount
+    }, []);
+
 
     return (
-        <div className="landing-page">
+        <div className="landing-page" style={{ backgroundImage: images[currentImage] }}>
             <Navbar />
             <header id="home" className="hero">
                 <div className="hero-content">
@@ -103,15 +76,13 @@ const LandingPage = () => {
             <section id="contact" className="contact">
                 <div className="contact-container">
                     <h2 className="contact-title">Get in Touch</h2>
-                    <form className="contact-form" onSubmit={handleSubmit}>
+                    <form className="contact-form">
                         <label htmlFor="name" className="contact-label">Name</label>
                         <input
                             type="text"
                             id="name"
                             className="contact-input"
                             placeholder="Your Name"
-                            value={formData.name}
-                            onChange={handleChange}
                         />
                         <label htmlFor="email" className="contact-label">Email</label>
                         <input
@@ -119,16 +90,12 @@ const LandingPage = () => {
                             id="email"
                             className="contact-input"
                             placeholder="you@example.com"
-                            value={formData.email}
-                            onChange={handleChange}
                         />
                         <label htmlFor="message" className="contact-label">Message</label>
                         <textarea
                             id="message"
                             className="contact-textarea"
                             placeholder="Your Message"
-                            value={formData.message}
-                            onChange={handleChange}
                         />
                         <button
                             type="submit"
@@ -137,9 +104,6 @@ const LandingPage = () => {
                             Send Message
                         </button>
                     </form>
-                    <p className={`submission-message ${isSubmitted ? 'show' : ''}`}>
-                        Your message has been successfully sent!
-                    </p>
                 </div>
             </section>
         </div>
