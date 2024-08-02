@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css'; // Import the CSS file for styling
 
 const Navbar = () => {
@@ -9,13 +10,13 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="navbar-container">
-                <a href="#home" className="navbar-brand">NairobiKonnect</a>
+                <Link to="/" className="navbar-brand">NairobiKonnect</Link>
                 <ul className="navbar-menu">
-                    <li><a href="#home" onClick={() => handleNavClick('home')} className="navbar-item">Home</a></li>
-                    <li><a href="#services" onClick={() => handleNavClick('services')} className="navbar-item">Services</a></li>
-                    <li><a href="#contact" onClick={() => handleNavClick('contact')} className="navbar-item">Contact</a></li>
-                    <li><a href="#signup" onClick={() => handleNavClick('signup')} className="navbar-item">Signup</a></li>
-                    <li><a href="#login" onClick={() => handleNavClick('login')} className="navbar-item">Login</a></li>
+                    <li><Link to="/" className="navbar-item">Home</Link></li>
+                    <li><Link to="#services" className="navbar-item" onClick={() => handleNavClick('services')}>Services</Link></li>
+                    <li><Link to="#contact" className="navbar-item" onClick={() => handleNavClick('contact')}>Contact</Link></li>
+                    <li><Link to="/signup" className="navbar-item">Signup</Link></li>
+                    <li><Link to="/login" className="navbar-item">Login</Link></li>
                 </ul>
             </div>
         </nav>
