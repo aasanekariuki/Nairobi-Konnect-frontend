@@ -1,49 +1,83 @@
-/* Landing.css */
-
+/* General Styles */
 .landing-page {
-    font-family: Arial, sans-serif;
-    color: #222121;
+    font-family: 'Roboto', sans-serif; /* Use a more engaging font */
+    color: #e9e3e3;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+/* Hero Section */
 .hero {
-    background-image: url('../assets/backgroud.jpg'); /* Add your background image URL here */
-    background-size: cover; /* Adjusts the size of the background image */
-    background-position: center; /* Centers the background image */
-    padding: 50px 0;
+    position: relative;
+    background-image: url('https://i.ytimg.com/vi/ofzQqJNEYBk/maxresdefault.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 700px; /* Increase minimum height for impact */
+    padding: 120px 0; /* Add more padding for larger text space */
     text-align: center;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Darker overlay for text readability */
+    z-index: 1;
 }
 
 .hero-content {
-    max-width: 800px;
+    position: relative;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
+    color: #ffffff;
+    z-index: 2;
 }
 
 .hero-title {
-    font-size: 2.5rem;
+    font-size: 3rem; /* Larger font size for impact */
+    font-weight: bold;
+    line-height: 1.2; /* Improve readability */
     margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Enhanced text shadow */
+    animation: slideIn 1s ease-out; /* Animation for title */
 }
 
 .hero-description {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 1s ease-out;
 }
 
 .cta-button {
-    background-color: #007bff; /* Button color */
+    background: linear-gradient(45deg, #007bff, #0056b3); /* Gradient background */
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Box shadow for 3D effect */
+    transition: transform 0.3s ease, background 0.3s ease; /* Transition effects */
 }
 
+.cta-button:hover {
+    background: linear-gradient(45deg, #0056b3, #007bff); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Services Section */
 .services {
-    background-image: url('/path/to/your/services-background.jpg'); /* Add your background image URL here */
+    background: linear-gradient(to bottom, rgba(10, 31, 88, 0.8), rgba(10, 31, 88, 1)), url(''); /* Gradient overlay */
     background-size: cover;
     background-position: center;
-    padding: 50px 0;
+    padding: 80px 0;
     text-align: center;
 }
 
@@ -54,8 +88,10 @@
 }
 
 .services-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem; /* Larger font size for impact */
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .services-list {
@@ -65,29 +101,39 @@
 }
 
 .service-card {
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better text visibility */
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px;
+    background: rgba(0, 0, 0, 0.6); /* Darker semi-transparent background */
+    padding: 25px;
+    border-radius: 15px; /* More rounded corners */
+    margin: 15px;
     flex: 1;
-    max-width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 320px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* Floating effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
 }
 
 .service-title {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 .service-description {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    color: #e9e3e3;
 }
 
+/* Contact Section */
 .contact {
-    background-image: url('../assets/backgroud.jpg'); /* Add your background image URL here */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('../assets/backgroud.jpg');
     background-size: cover;
     background-position: center;
-    padding: 50px 0;
+    padding: 80px 0;
     text-align: center;
 }
 
@@ -98,39 +144,71 @@
 }
 
 .contact-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .contact-form {
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
-    padding: 20px;
-    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 25px;
+    border-radius: 12px;
     display: inline-block;
     max-width: 100%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .contact-label {
     display: block;
-    font-size: 1rem;
-    margin: 10px 0 5px;
+    font-size: 1.1rem;
+    margin: 12px 0 6px;
+    color: #e9e3e3;
 }
 
 .contact-input,
 .contact-textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 12px;
+    margin-bottom: 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    background-color: #fff;
 }
 
 .contact-submit {
-    background-color: #007bff; /* Button color */
+    background: linear-gradient(45deg, #007bff, #0056b3); /* Gradient background */
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    transition: background 0.3s ease, transform 0.3s ease; /* Transition effects */
+}
+
+.contact-submit:hover {
+    background: linear-gradient(45deg, #0056b3, #007bff); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Keyframe Animations */
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
