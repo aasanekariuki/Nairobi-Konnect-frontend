@@ -241,3 +241,24 @@
         transform: translateY(0);
     }
 }
+
+.submission-message {
+    margin-top: 1rem;
+    color: black; /* Change the color to black */
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    background-color: #f0f0f0; /* Light gray background */
+    border-left: 5px solid black; /* Black border on the left */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for a floating effect */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(-10px); /* Start slightly above its final position */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
+.submission-message.show {
+    opacity: 1; /* Visible */
+    transform: translateY(0); /* Move to its final position */
+}
+
