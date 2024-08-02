@@ -1,6 +1,6 @@
 /* General Styles */
 .landing-page {
-    font-family: 'Roboto', sans-serif; /* Use a more engaging font */
+    font-family: 'Roboto', sans-serif; /* Modern font */
     color: #e9e3e3;
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
@@ -12,40 +12,29 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 700px; /* Increase minimum height for impact */
+    min-height: 700px; /* Increased minimum height for impact */
     padding: 120px 0; /* Add more padding for larger text space */
     text-align: center;
     color: #ffffff;
     overflow: hidden;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Darker overlay for text readability */
-    z-index: 1;
-}
-
+/* Animated hero content */
 .hero-content {
     position: relative;
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
-    color: #ffffff;
     z-index: 2;
 }
 
 .hero-title {
     font-size: 3rem; /* Larger font size for impact */
-    font-weight: bold;
+    font-weight: 700;
     line-height: 1.2; /* Improve readability */
     margin-bottom: 20px;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Enhanced text shadow */
-    animation: slideIn 1s ease-out; /* Animation for title */
+    animation: slideIn 1s ease-out, glow 1.5s infinite alternate; /* Animation effects */
 }
 
 .hero-description {
@@ -92,6 +81,7 @@
     margin-bottom: 30px;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    animation: fadeInUp 1s ease-out;
 }
 
 .services-list {
@@ -109,6 +99,24 @@
     max-width: 320px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover::before {
+    opacity: 1; /* Add subtle glowing effect on hover */
 }
 
 .service-card:hover {
@@ -148,6 +156,7 @@
     margin-bottom: 30px;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    animation: fadeInUp 1s ease-out;
 }
 
 .contact-form {
@@ -210,5 +219,25 @@
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
