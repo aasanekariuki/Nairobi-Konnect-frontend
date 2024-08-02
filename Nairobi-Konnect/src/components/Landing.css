@@ -1,215 +1,205 @@
-/* General Styles */
-.landing-page {
-    background-size: cover; /* Ensure the background covers the entire element */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    height: 100vh; /* Full viewport height */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #00274d; /* Dark Blue */
+    --secondary-color: #000000; /* Black */
+    --accent-color: #0077cc; /* Lighter Blue for accents */
+    --text-color: #f0f0f0; /* Light Gray for text */
+    --bg-color: #121212; /* Dark background */
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Hero Section */
 .hero {
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Ensure the hero section takes full viewport height */
-    color: white; /* Ensure text is readable against the background */
-    text-align: center; /* Center-align text */
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .hero-content {
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
-    padding: 2rem;
-    border-radius: 10px;
+    text-align: center;
+    z-index: 2;
 }
 
 .hero-title {
-    font-size: 3rem; /* Larger font size for impact */
-    font-weight: bold;
-    line-height: 1.2; /* Improve readability */
-    margin-bottom: 20px;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Enhanced text shadow */
-    animation: slideIn 1s ease-out; /* Animation for title */
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
 }
 
 .hero-description {
     font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    animation: fadeIn 1s ease-out;
+    color: var(--text-color);
+    margin-bottom: 2rem;
 }
 
 .cta-button {
-    background: linear-gradient(45deg, #007bff, #0056b3); /* Gradient background */
-    color: #fff;
-    padding: 12px 24px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: var(--accent-color);
+    color: var(--text-color);
     border: none;
-    border-radius: 8px;
+    border-radius: 50px;
     cursor: pointer;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Box shadow for 3D effect */
-    transition: transform 0.3s ease, background 0.3s ease; /* Transition effects */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-button:hover {
-    background: linear-gradient(45deg, #0056b3, #007bff); /* Reverse gradient on hover */
-    transform: scale(1.05); /* Slight zoom effect */
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Services Section */
 .services {
-    background: linear-gradient(to bottom, rgba(10, 31, 88, 0.8), rgba(10, 31, 88, 1)), url(''); /* Gradient overlay */
-    background-size: cover;
-    background-position: center;
-    padding: 80px 0;
-    text-align: center;
+    padding: 5rem 0;
+    background-color: var(--secondary-color);
 }
 
 .services-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 2rem;
 }
 
 .services-title {
-    font-size: 2.5rem; /* Larger font size for impact */
-    margin-bottom: 30px;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--accent-color);
 }
 
 .services-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
 }
 
 .service-card {
-    background: rgba(0, 0, 0, 0.6); /* Darker semi-transparent background */
-    padding: 25px;
-    border-radius: 15px; /* More rounded corners */
-    margin: 15px;
-    flex: 1;
-    max-width: 320px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+    background-color: var(--bg-color);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-10px); /* Floating effect */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    background-color: var(--accent-color);
+    border-radius: 50%;
 }
 
 .service-title {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-    color: #ffffff;
-    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
 }
 
 .service-description {
-    font-size: 1.1rem;
-    color: #e9e3e3;
+    font-size: 1rem;
+    color: var(--text-color);
 }
 
 /* Contact Section */
 .contact {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('../assets/backgroud.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 80px 0;
-    text-align: center;
+    padding: 5rem 0;
+    background-color: var(--primary-color);
 }
 
 .contact-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 2rem;
 }
 
 .contact-title {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
 }
 
 .contact-form {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 25px;
-    border-radius: 12px;
-    display: inline-block;
-    max-width: 100%;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background-color: var(--secondary-color);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
 }
 
 .contact-label {
     display: block;
-    font-size: 1.1rem;
-    margin: 12px 0 6px;
-    color: #e9e3e3;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
 }
 
 .contact-input,
 .contact-textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 12px;
-    border: none;
-    border-radius: 8px;
-    background-color: #fff;
+    padding: 0.8rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
 }
 
 .contact-submit {
-    background: linear-gradient(45deg, #007bff, #0056b3); /* Gradient background */
-    color: #fff;
-    padding: 12px 24px;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--accent-color);
+    color: var(--text-color);
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
+    font-size: 1.2rem;
     cursor: pointer;
-    font-size: 1.1rem;
-    transition: background 0.3s ease, transform 0.3s ease; /* Transition effects */
+    transition: background-color 0.3s ease;
 }
 
 .contact-submit:hover {
-    background: linear-gradient(45deg, #0056b3, #007bff); /* Reverse gradient on hover */
-    transform: scale(1.05); /* Slight zoom effect */
+    background-color: #005fa3;
 }
 
-/* Keyframe Animations */
-@keyframes slideIn {
-    from {
-        transform: translateY(-30px);
-        opacity: 0;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
     }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+    .hero-description {
+        font-size: 1.2rem;
     }
-    to {
-        opacity: 1;
-    }
-}
-.submission-message {
-    margin-top: 1rem;
-    color: black; /* Change the color to black */
-    font-size: 1.1rem;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    background-color: #f0f0f0; /* Light gray background */
-    border-left: 5px solid black; /* Black border on the left */
-    border-radius: 4px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for a floating effect */
-    opacity: 0; /* Initially hidden */
-    transform: translateY(-10px); /* Start slightly above its final position */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
-}
 
-.submission-message.show {
-    opacity: 1; /* Visible */
-    transform: translateY(0); /* Move to its final position */
+    .services-list {
+        grid-template-columns: 1fr;
+    }
 }

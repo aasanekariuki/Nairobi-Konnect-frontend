@@ -5,7 +5,6 @@ import './Landing.css';
 const LandingPage = () => {
     const [currentImage, setCurrentImage] = useState(0);
 
-    // List of background images
     const images = [
         'url(https://i.ytimg.com/vi/ofzQqJNEYBk/maxresdefault.jpg)',
         'url(https://img.freepik.com/premium-photo/nairobi-city-county-kenyas-capital-cityscapes-skyline-skyscrapers-highrise-buildings-architecture_257688-277.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1722297600&semt=ais_hybrid)',
@@ -13,23 +12,21 @@ const LandingPage = () => {
     ];
 
     useEffect(() => {
-        // Change the background image every 10 seconds
         const interval = setInterval(() => {
             setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-        }, 10000); // 10000 milliseconds = 10 seconds
+        }, 10000);
 
-        return () => clearInterval(interval); // Clean up the interval on component unmount
+        return () => clearInterval(interval);
     }, []);
 
-
     return (
-        <div className="landing-page" style={{ backgroundImage: images[currentImage] }}>
+        <div className="landing-page">
             <Navbar />
-            <header id="home" className="hero">
+            <header id="home" className="hero" style={{ backgroundImage: images[currentImage] }}>
                 <div className="hero-content">
-                    <h1 className="hero-title">Welcome to NairobiKonnect where you will be able to explore the greatness of Nairobi</h1>
+                    <h1 className="hero-title">Welcome to NairobiKonnect</h1>
                     <p className="hero-description">
-                        NairobiKonnect is a platform that allows users to explore the greatness of Nairobi. Whereby a user can book a bus seat and buy from the various local stalls
+                        Explore the greatness of Nairobi
                     </p>
                     <button
                         onClick={() => document.getElementById('services').scrollIntoView({ behavior: 'smooth' })}
@@ -45,25 +42,28 @@ const LandingPage = () => {
                     <h2 className="services-title">Our Services</h2>
                     <div className="services-list">
                         <div className="service-card">
+                            <div className="service-icon"></div>
                             <h3 className="service-title">Booking Buses</h3>
                             <p className="service-description">
                                 A user is able to book a bus for the route they would want
                             </p>
                         </div>
                         <div className="service-card">
+                            <div className="service-icon"></div>
                             <h3 className="service-title">Driver</h3>
                             <p className="service-description">
                                 A driver can register their car and work 
                             </p>
                         </div>
                         <div className="service-card">
+                            <div className="service-icon"></div>
                             <h3 className="service-title">Buying</h3>
                             <p className="service-description">
                                 A user can shop from local stores with an effective payment method
                             </p>
                         </div>
-
                         <div className="service-card">
+                            <div className="service-icon"></div>
                             <h3 className="service-title">BusinessPerson</h3>
                             <p className="service-description">
                                 A business person can sell their products to the users
@@ -77,26 +77,32 @@ const LandingPage = () => {
                 <div className="contact-container">
                     <h2 className="contact-title">Get in Touch</h2>
                     <form className="contact-form">
-                        <label htmlFor="name" className="contact-label">Name</label>
-                        <input
-                            type="text"
-                            id="name"
-                            className="contact-input"
-                            placeholder="Your Name"
-                        />
-                        <label htmlFor="email" className="contact-label">Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            className="contact-input"
-                            placeholder="you@example.com"
-                        />
-                        <label htmlFor="message" className="contact-label">Message</label>
-                        <textarea
-                            id="message"
-                            className="contact-textarea"
-                            placeholder="Your Message"
-                        />
+                        <div className="form-group">
+                            <label htmlFor="name" className="contact-label">Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                className="contact-input"
+                                placeholder="Your Name"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="email" className="contact-label">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                className="contact-input"
+                                placeholder="you@example.com"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="message" className="contact-label">Message</label>
+                            <textarea
+                                id="message"
+                                className="contact-textarea"
+                                placeholder="Your Message"
+                            />
+                        </div>
                         <button
                             type="submit"
                             className="contact-submit"
