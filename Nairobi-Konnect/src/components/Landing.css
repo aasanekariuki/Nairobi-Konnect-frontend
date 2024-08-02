@@ -122,7 +122,11 @@ body {
     100% {
         background-image: url('https://www.voyagekenya.fr/cdn/ke-public/nairobi_centre_ville.jpg');
     }
+    100% {
+        background-image: url('https://media.cnn.com/api/v1/images/stellar/prod/230202121817-basigo-electric-bus-nairobi-kenya-2.jpg?c=original');
+    }
 }
+
 
 /* Services Section */
 .services {

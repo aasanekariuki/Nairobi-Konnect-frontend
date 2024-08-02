@@ -8,9 +8,11 @@ const LandingPage = () => {
     const images = [
         'url(https://i.ytimg.com/vi/ofzQqJNEYBk/maxresdefault.jpg)',
         'url(https://img.freepik.com/premium-photo/nairobi-city-county-kenyas-capital-cityscapes-skyline-skyscrapers-highrise-buildings-architecture_257688-277.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1722297600&semt=ais_hybrid)',
-        'url(https://www.voyagekenya.fr/cdn/ke-public/nairobi_centre_ville.jpg)'
+        'url(https://www.voyagekenya.fr/cdn/ke-public/nairobi_centre_ville.jpg)',
+        'url(https://media.cnn.com/api/v1/images/stellar/prod/230202121817-basigo-electric-bus-nairobi-kenya-2.jpg?c=original)'
     ];
 
+   
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImage((prevImage) => (prevImage + 1) % images.length);
