@@ -188,14 +188,15 @@
 
 .side-text {
     flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: url('https://ilovenbo.com/wp-content/uploads/2023/12/pexels-antony-trivet-13348192.jpg') no-repeat center center;
+    background-size: cover;
     color: #F4F4F4;
     text-align: center;
     padding: 2rem;
     font-size: 1.2rem;
     font-weight: 300;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
 }
 
 .side-text h3 {
