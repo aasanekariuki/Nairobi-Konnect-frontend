@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css';
-import backgroundImage from '../assets/react.svg'; // Import the background image
+import backgroundImage from '../assets/image4.jpeg'; // Import the background image
 
 const Login = () => {
   // Separate states for each form
