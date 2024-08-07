@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Bus from './components/Bus'
 import Driver from './components/Driver'
 import Landing from './components/Landing'
@@ -9,9 +10,12 @@ import SignUp from './components/SignUp'
 import Stalls from './components/Stalls'
 import User from './components/User'
 
+
 function App() {
   return (
     <div>
+      <Router>
+      <Navbar/>
     <Routes>
       <Route path="/bus" element={<Bus />} />
       <Route path="/driver" element={<Driver />} />
@@ -22,6 +26,7 @@ function App() {
       <Route path="/stalls" element={<Stalls />} />
       <Route path="/user" element={<User />} />
     </Routes>
+    </Router>
       </div>
   )
 }
